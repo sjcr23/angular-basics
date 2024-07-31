@@ -1,0 +1,36 @@
+<h1>Heroe information: {{ alterEgo }}</h1>
+
+<dl>
+  <td>Nombre</td>
+  <dd> {{ realName }}</dd>
+
+  <td>Edad</td>
+  <dd> {{ age }}</dd>
+
+  <td>Método</td>
+  <dd> {{ heroDescription() }}</dd>
+
+  <td>Capitalizado</td>
+  <dd> {{ capitalizeName }} </dd>
+</dl>
+
+
+<button
+*ngIf=" alterEgo !== 'The Flash'"
+(click)="setNameTo('The Flash')"
+class="btn btn-primary mx-2" >
+Cambiar nombre
+</button>
+
+<button
+  *ngIf="age < 40"
+  (click)="setAgeTo(45)" class="btn btn-primary">
+  Cambiar edad
+</button>
+
+
+<button
+  *ngIf=" (alterEgo !== 'Batman') && (age > 40)"
+  (click)="resetToDefault()" class="btn btn-primary">
+  Reset
+</button>

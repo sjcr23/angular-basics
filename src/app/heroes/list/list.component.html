@@ -1,0 +1,37 @@
+<h1>Listado de Héroes</h1>
+
+<button
+  class="btn btn-outline-danger"
+  (click)="removeLastHero()"
+>
+Borrar último héreo
+</button>
+
+
+<table class="mt-2 table">
+  <thead>
+    <tr>
+      <th>Alter ego </th>
+      <th>Nombre real</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of heroes">
+      <td> {{ hero.alterEgo }} </td>
+      <td> {{ hero.realName }} </td>
+      <td> {{ hero.age }} </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<div *ngIf="deletedHero && !emptyList; else nothingWasDeleted">
+  <h4>Héreo borrado <small class="text-danger">{{ deletedHero }}</small></h4>
+</div>
+
+<ng-template #nothingWasDeleted>
+</ng-template>
+
+
+
