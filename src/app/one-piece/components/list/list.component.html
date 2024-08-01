@@ -1,0 +1,29 @@
+<h4>{{listName}}</h4>
+
+
+<table class="mt-2 table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Bounty</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let character of nakamas; let i = index;">
+      <td> {{ i+1 }} </td>
+      <td> {{ character.name }} </td>
+      <td> {{ character.bounty }} </td>
+      <td>
+        <button
+          *ngIf="i > 0"
+          class="btn btn-danger"
+          (click)="onDeleteCharacter(character.id)"> X
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

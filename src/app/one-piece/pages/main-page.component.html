@@ -1,0 +1,17 @@
+<br>
+<h1>{{title}}</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <op-list
+      [nakamas]="characters"
+      (onDeletedId)="onDeteledCharacter($event)"
+    >
+    </op-list>
+  </div>
+
+  <div class="col">
+    <op-add-character (emitedCharacter)="onNewCharacter($event)"></op-add-character>
+  </div>
+</div>

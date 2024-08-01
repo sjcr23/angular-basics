@@ -1,0 +1,24 @@
+<h4>{{ formName }}</h4>
+<form class="row" (ngSubmit)="emitCharacter()">
+  <input
+    type="text"
+    [(ngModel)]="recordedCharacter.name"
+    name="name"
+    class="form-control mb-2" placeholder="Name"
+  >
+
+  <input
+    type="number"
+    [(ngModel)]="recordedCharacter.bounty"
+    name="bountych"
+    class="form-control mb-2" placeholder="Bounty (In millions)"
+  >
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+
+  > Add to crew</button>
+
+  <!-- <pre>{{ recordedCharacter | json }}</pre> -->
+</form>
